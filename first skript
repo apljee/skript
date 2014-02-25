@@ -1,0 +1,10 @@
+command /sethome:
+  trigger:
+    set {home.%player%} to location of player
+    
+command /home:
+  trigger:
+    if {home.%player} is not set:
+      message "<red>You need to set a home first, idiot."
+      stop trigger
+    teleport player to {home.%player%}
